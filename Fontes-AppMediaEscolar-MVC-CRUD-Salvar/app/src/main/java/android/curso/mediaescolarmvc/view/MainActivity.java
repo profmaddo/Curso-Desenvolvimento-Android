@@ -1,6 +1,5 @@
 package android.curso.mediaescolarmvc.view;
 
-
 import android.curso.mediaescolarmvc.R;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;

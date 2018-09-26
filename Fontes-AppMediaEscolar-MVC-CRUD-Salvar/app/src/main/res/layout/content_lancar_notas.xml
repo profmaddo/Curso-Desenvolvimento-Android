@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="#b9b9ff"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="android.curso.mediaescolar.MainActivity"
+    tools:context="android.curso.mediaescolarmvc.view.LancarNotasActivity"
     tools:showIn="@layout/activity_primeiro_bimestre">
 
 
@@ -17,7 +17,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="19dp"
-        android:text="Média Escolar" />
+        android:text="@string/txtTitulo" />
 
     <TextView
         android:id="@+id/txtBimestre"
