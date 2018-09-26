@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Média Escolar</string>
+    <string name="action_sair">Sair</string>
+    <string name="btn_primeiro_bimestre">1º Bimestre</string>
+    <string name="btn_segundo_bimestre">2º Bimestre</string>
+    <string name="btn_terceiro_bimestre">3º Bimestre</string>
+    <string name="btn_quarto_bimestre">4º Bimestre</string>
+    <string name="btn_resultado_final">Resultado Final</string>
+</resources>
