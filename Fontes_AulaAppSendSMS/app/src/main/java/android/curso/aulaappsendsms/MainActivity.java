@@ -7,6 +7,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+/**
+ * <p>Esta classe inicializa o app SMS<p/>
+ *
+ * @author marcomaddo
+ *
+ */
 
 public class MainActivity extends AppCompatActivity {
 
@@ -54,12 +60,12 @@ public class MainActivity extends AppCompatActivity {
                             null, null);
 
                     showAlerta(
-                            "Seu SMS foi enviado com sucesso!");
+                            "Seu SMS foi enviado com sucesso!", 1);
 
                 } catch (Exception e) {
 
                     showAlerta(
-                            "Tente novamente, ocorreu uma falha ao enviar o SMS.");
+                            "Tente novamente, ocorreu uma falha ao enviar o SMS.", 1);
 
                     e.printStackTrace();
                 }
@@ -71,12 +77,13 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    /*
-    * Este recurso ainda não foi abordado até este momento
-    * do curso, mas será explicado em detalhes em breve.
-    * Apenas não altere este método.
+
+    /**
+     *
+     * @param mensagem
+     * @param codigo
      */
-    public void showAlerta(String mensagem){
+    public void showAlerta(String mensagem, int codigo){
 
         android.app.AlertDialog.Builder builder = new android.app.AlertDialog.Builder(MainActivity.this);
         builder.setMessage(mensagem)
