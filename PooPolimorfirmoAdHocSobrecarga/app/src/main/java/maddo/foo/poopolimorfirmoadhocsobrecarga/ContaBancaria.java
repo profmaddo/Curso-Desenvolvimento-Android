@@ -8,8 +8,10 @@ import android.util.Log;
 public class ContaBancaria {
 
     public  ContaBancaria(){
+
         Log.v("Polimorfismo","Conta Bancaria Aberta");
         Log.v("Polimorfismo","Sem depósito");
+
     }
 
     public  ContaBancaria(double deposito){
