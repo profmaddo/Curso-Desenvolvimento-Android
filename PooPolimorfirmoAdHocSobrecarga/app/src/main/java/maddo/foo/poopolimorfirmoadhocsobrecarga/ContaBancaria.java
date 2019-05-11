@@ -2,6 +2,9 @@ package maddo.foo.poopolimorfirmoadhocsobrecarga;
 
 import android.util.Log;
 
+/**
+ * Classe Conta Bancaria
+ */
 public class ContaBancaria {
 
     public  ContaBancaria(){
