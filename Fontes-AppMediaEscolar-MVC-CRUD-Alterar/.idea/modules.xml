@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Fontes-AppMediaEscolar-Aula-061-MVC-CRUD-Alterar.iml" filepath="$PROJECT_DIR$/Fontes-AppMediaEscolar-Aula-061-MVC-CRUD-Alterar.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Fontes-AppMediaEscolar-MVC-CRUD-Alterar.iml" filepath="$PROJECT_DIR$/Fontes-AppMediaEscolar-MVC-CRUD-Alterar.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
