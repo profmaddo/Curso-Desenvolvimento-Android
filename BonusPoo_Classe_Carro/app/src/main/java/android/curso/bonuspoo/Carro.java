@@ -4,6 +4,7 @@ import android.util.Log;
 
 /**
  * Created by marcomaddo on 26/10/2017.
+ * Atualizado para Android Studio 3.5.2 em 25/11/2019
  */
 
 public class Carro {

@@ -9,6 +9,11 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+/**
+ * Created by marcomaddo on 26/10/2017.
+ * Atualizado para Android Studio 3.5.2 em 25/11/2019
+ */
+
 public class MainActivity extends AppCompatActivity {
 
     EditText editFabricante;
