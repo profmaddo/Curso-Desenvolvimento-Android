@@ -4,7 +4,7 @@ import android.content.Context;
 
 import android.curso.bonuspoo.R;
 import android.curso.bonuspoo.model.Carro;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.CheckBox;
