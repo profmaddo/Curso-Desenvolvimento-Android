@@ -1,10 +1,10 @@
 package android.curso.bonuslogicaestruturarepeticao;
 
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.snackbar.Snackbar;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.view.Menu;
@@ -23,13 +23,8 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         List<String> linguagens = new ArrayList<>();
-        linguagens.add("Java");
-        linguagens.add("JavaScript");
-        linguagens.add("PHP");
-        linguagens.add("C");
-        linguagens.add("C++");
-        linguagens.add("Prolog");
-        linguagens.add("Pascal");
+
+        popularLista(linguagens);
 
         // Primeira opção..: for
         // Segunda opção...: foreach
@@ -64,6 +59,16 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+    }
+
+    private void popularLista(List<String> linguagens) {
+        linguagens.add("Java");
+        linguagens.add("JavaScript");
+        linguagens.add("PHP");
+        linguagens.add("C");
+        linguagens.add("C++");
+        linguagens.add("Prolog");
+        linguagens.add("Pascal");
     }
 
     @Override
