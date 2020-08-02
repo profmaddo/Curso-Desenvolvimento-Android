@@ -27,6 +27,50 @@ public class MainActivity extends AppCompatActivity {
         // será utilizado para a Activity, no caso R.layout.actibity_main
         setContentView(R.layout.activity_main);
 
+        initFormulario();
+
+        // Método setOnClickListner utilizado para receber o click
+        // no botão e executar alguma ação ou regra de negócio
+        btnLimpar.setOnClickListener(
+                new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                initCampos();
+            }
+        });
+
+        btnSalvar.setOnClickListener(
+                new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                showMensagem();
+
+            }
+        });
+
+
+    }
+
+    private void initCampos() {
+
+        primeiroNome.setText("");
+        segundoNome.setText("");
+        telefone.setText("");
+        email.setText("");
+    }
+
+    private void showMensagem() {
+        // Classe Toast utilizada para apresentar mensagens
+        // curtas na tela do celular semelhante aos PopUps
+        Toast.makeText(getApplicationContext(),"Primeiro nome: "+primeiroNome.getText(),Toast.LENGTH_LONG).show();
+        Toast.makeText(getApplicationContext(),"Segundo nome: "+segundoNome.getText(),Toast.LENGTH_LONG).show();
+        Toast.makeText(getApplicationContext(),"Telefone: "+telefone.getText(),Toast.LENGTH_LONG).show();
+        Toast.makeText(getApplicationContext(),"Email: "+email.getText(),Toast.LENGTH_LONG).show();
+    }
+
+    private void initFormulario() {
         // Método findViewById utilizado para linkar o componente
         // de Layout com a classe MainActivity neste caso
         primeiroNome = findViewById(R.id.primeiroNome);
@@ -36,36 +80,5 @@ public class MainActivity extends AppCompatActivity {
 
         btnLimpar = findViewById(R.id.btnLimpar);
         btnSalvar = findViewById(R.id.btnSalvar);
-
-        // Método setOnClickListner utilizado para receber o click
-        // no botão e executar alguma ação ou regra de negócio
-        btnLimpar.setOnClickListener(
-                new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                primeiroNome.setText("");
-                segundoNome.setText("");
-                telefone.setText("");
-                email.setText("");
-            }
-        });
-
-        btnSalvar.setOnClickListener(
-                new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                // Classe Toast utilizada para apresentar mensagens
-                // curtas na tela do celular semelhante aos PopUps
-                Toast.makeText(getApplicationContext(),"Primeiro nome: "+primeiroNome.getText(),Toast.LENGTH_LONG).show();
-                Toast.makeText(getApplicationContext(),"Segundo nome: "+segundoNome.getText(),Toast.LENGTH_LONG).show();
-                Toast.makeText(getApplicationContext(),"Telefone: "+telefone.getText(),Toast.LENGTH_LONG).show();
-                Toast.makeText(getApplicationContext(),"Email: "+email.getText(),Toast.LENGTH_LONG).show();
-
-            }
-        });
-
-
     }
 }
