@@ -3,7 +3,7 @@ package android.curso.mediaescolarmvc.view;
 import android.content.Intent;
 import android.curso.mediaescolarmvc.R;
 import android.os.Handler;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
 /**
