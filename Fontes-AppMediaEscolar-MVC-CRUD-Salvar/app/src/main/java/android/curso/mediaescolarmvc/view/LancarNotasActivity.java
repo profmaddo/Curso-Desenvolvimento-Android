@@ -1,7 +1,7 @@
 package android.curso.mediaescolarmvc.view;
 
 import android.curso.mediaescolarmvc.R;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
 public class LancarNotasActivity extends AppCompatActivity {
