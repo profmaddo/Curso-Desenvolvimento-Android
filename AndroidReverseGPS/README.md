@@ -1,9 +1,8 @@
 https://www.marcomaddo.com.br
 =============================
 
-Projeto Android para obter qualquer endereço a partir 
-das coordenadas GPS, se estiverem disponíveis.
+# Desenvolvimento-Android-do-absoluto-zero-para-iniciantes
 
-Visite a página do curso completo
-https://www.udemy.com/course/desenvolvimento-android-do-absoluto-zero-para-iniciantes/?referralCode=3DDFDC05911F651F5248
-
+Este projeto é faz parte do curso 100% on-line do Professor Marco Maddo.
+Visite o site para conhecer a grade completa do curso e assistir aulas
+demonstrativas.
