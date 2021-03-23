@@ -1,4 +1,4 @@
-package maddo.foo.poopolimorfirmouniversalsubtipagem;
+package maddo.foo.poopolimorfismouniversalsubtipagem;
 
 import android.util.Log;
 
