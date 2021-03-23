@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Desenvolvimento-Android-do-absoluto-zero-para-iniciantes-Fontes_AulaApp01.iml" filepath="$PROJECT_DIR$/.idea/modules/Desenvolvimento-Android-do-absoluto-zero-para-iniciantes-Fontes_AulaApp01.iml" group="Fontes_AulaApp01" />
-      <module fileurl="file://$PROJECT_DIR$/Fontes_AulaApp01.iml" filepath="$PROJECT_DIR$/Fontes_AulaApp01.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Fontes_AulaApp01-app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Fontes_AulaApp01-app.iml" group="Fontes_AulaApp01/app" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/App_Aula_01.iml" filepath="$PROJECT_DIR$/.idea/modules/App_Aula_01.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/App_Aula_01.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/App_Aula_01.app.iml" />
     </modules>
   </component>
 </project>
