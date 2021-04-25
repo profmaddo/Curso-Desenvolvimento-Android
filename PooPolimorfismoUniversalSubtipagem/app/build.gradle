@@ -1,4 +1,7 @@
-apply plugin: 'com.android.application'
+plugins {
+    id 'com.android.application'
+    id "org.sonarqube" version "3.1"
+}
 
 android {
     compileSdkVersion 30
@@ -14,6 +17,14 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+    }
+}
+
+sonarqube {
+    properties {
+        property "sonar.projectKey", "profmaddo_Desenvolvimento-Android-do-absoluto-zero-para-iniciantes"
+        property "sonar.organization", "profmaddo"
+        property "sonar.host.url", "https://sonarcloud.io"
     }
 }
 
