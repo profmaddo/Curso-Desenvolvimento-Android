@@ -4,7 +4,9 @@ import android.content.Intent;
 import android.location.Address;
 import android.location.Geocoder;
 import android.net.Uri;
+
 import androidx.appcompat.app.AppCompatActivity;
+
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -14,14 +16,16 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.io.IOException;
 import java.util.List;
+import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
 
-    // TODO: Classe GPSTracker
     GPSTracker gps;
-    TextView txtLatitude, txtLongitude, txtEndereco, txtRede;
+    TextView txtLatitude;
+    TextView txtLongitude;
+    TextView txtEndereco;
+    TextView txtRede;
     Button btnMapa;
 
     Geocoder geocoder;
@@ -33,10 +37,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        txtLatitude =  findViewById(R.id.txtLatitude);
-        txtLongitude =   findViewById(R.id.txtLongitude);
-        txtEndereco =   findViewById(R.id.txtEndereco);
-        btnMapa =   findViewById(R.id.btnMapa);
+        txtLatitude = findViewById(R.id.txtLatitude);
+        txtLongitude = findViewById(R.id.txtLongitude);
+        txtEndereco = findViewById(R.id.txtEndereco);
+        btnMapa = findViewById(R.id.btnMapa);
 
         Log.i("GpsReverso", AppUtil.getNetworkClass(this));
 
@@ -47,54 +51,66 @@ public class MainActivity extends AppCompatActivity {
 
         geocoder = new Geocoder(this);
 
-        if (gps.canGetLocation()) {
+        try {
+            if (gps.canGetLocation()) {
 
-            double latitude = gps.getLatitude();
-            double longitude = gps.getLongitude();
+                double latitude = gps.getLatitude();
+                double longitude = gps.getLongitude();
 
-            if (AppUtil.isConnectingToInternet(getApplicationContext()) && (latitude != 0) && (longitude != 0)) {
+                if (AppUtil.isConnectingToInternet(getApplicationContext()) && (latitude != 0) && (longitude != 0)) {
 
-                List<Address> geoResult = getEnderecoReverso(latitude, longitude);
+                    List<Address> geoResult;
 
-                Address enderecoAtual = geoResult.get(0);
+                    geoResult = getEnderecoReverso(latitude, longitude);
 
-                String tempo = "";
+                    Address enderecoAtual = new Address(Locale.ENGLISH);
 
-                if (enderecoAtual.getAddressLine(0) != null)
-                    tempo += "\n " + enderecoAtual.getAddressLine(0);
+                    if(geoResult !=null) {
+                        enderecoAtual = geoResult.get(0);
+                    }
 
-                if (enderecoAtual.getAddressLine(1) != null)
-                    tempo += "\n " + enderecoAtual.getAddressLine(1);
+                    String tempo = "";
 
-                if (enderecoAtual.getAddressLine(2) != null)
-                    tempo += "\n " + enderecoAtual.getAddressLine(2);
+                    if (enderecoAtual.getAddressLine(0) != null)
+                        tempo += "\n " + enderecoAtual.getAddressLine(0);
 
-                if (enderecoAtual.getAdminArea() != null)
-                    tempo += "\n " + enderecoAtual.getAdminArea();
+                    if (enderecoAtual.getAddressLine(1) != null)
+                        tempo += "\n " + enderecoAtual.getAddressLine(1);
 
+                    if (enderecoAtual.getAddressLine(2) != null)
+                        tempo += "\n " + enderecoAtual.getAddressLine(2);
 
-                txtEndereco.setVisibility(View.VISIBLE);
-                txtEndereco.setText(tempo);
-
-
-                txtLatitude.setText("Latitude: " + String.valueOf(latitude));
-
-                txtLongitude.setText("Longitude: " + String.valueOf(longitude));
+                    if (enderecoAtual.getAdminArea() != null)
+                        tempo += "\n " + enderecoAtual.getAdminArea();
 
 
-                btnMapa.setEnabled(true);
+                    txtEndereco.setVisibility(View.VISIBLE);
+                    txtEndereco.setText(tempo);
 
-                urlMapa = "http://maps.google.com/maps?q=" + String.valueOf(latitude) + "," + String.valueOf(longitude);
 
-            } else {
+                    txtLatitude.setText("Latitude: " + latitude);
 
-                Toast.makeText(this, "Coordenadas não disponíveis, verifique as permissões para o aplicativo....", Toast.LENGTH_LONG).show();
-                btnMapa.setEnabled(false);
+                    txtLongitude.setText("Longitude: " + longitude);
+
+
+                    btnMapa.setEnabled(true);
+
+                    urlMapa = "http://maps.google.com/maps?q=" + latitude + "," + longitude;
+
+                } else {
+
+                    Toast.makeText(this, "Coordenadas não disponíveis, verifique as permissões para o aplicativo....", Toast.LENGTH_LONG).show();
+                    btnMapa.setEnabled(false);
+
+                }
 
             }
 
-        }
+        } catch (Exception e) {
 
+            e.printStackTrace();
+
+        }
         btnMapa.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -134,9 +150,7 @@ public class MainActivity extends AppCompatActivity {
 
         try {
             enderecos = geocoder.getFromLocation(lat, lon, maxResults);
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (IllegalArgumentException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
 
