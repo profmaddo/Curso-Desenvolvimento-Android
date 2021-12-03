@@ -13,4 +13,4 @@ https://www.udemy.com/course/desenvolvimento-android-do-absoluto-zero-para-inici
 
 # Exemplo de Polimorfismo em Java
 
-![alt text](https://github.com/profmaddo/Desenvolvimento-Android-do-absoluto-zero-para-iniciantes/blob/master/PooPolimorfismoUniversalSubtipagem/tela-aplicativo.png)
+![alt text](https://github.com/profmaddo/Desenvolvimento-Android-do-absoluto-zero-para-iniciantes/blob/master/PooPolimorfismoAdHocSobrecarga/tela-aplicativo.png)
