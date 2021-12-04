@@ -11,3 +11,4 @@ demonstrativas.
 
 https://www.udemy.com/course/desenvolvimento-android-do-absoluto-zero-para-iniciantes/?referralCode=3DDFDC05911F651F5248
 
+![alt text](https://github.com/profmaddo/Desenvolvimento-Android-do-absoluto-zero-para-iniciantes/blob/master/2018ModeloDrawerLayout/teta-aplicacao.png)
