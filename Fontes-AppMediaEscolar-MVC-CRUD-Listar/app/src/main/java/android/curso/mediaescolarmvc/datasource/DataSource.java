@@ -18,7 +18,7 @@ import java.util.List;
 
 public class DataSource extends SQLiteOpenHelper{
 
-    private static final String DB_NAME = "media_escolar.sqlite";
+    private static final String DB_NAME = "aulao_db.sqlite";
     private static final int DB_VERSION = 1;
 
     Cursor cursor;
@@ -37,11 +37,13 @@ public class DataSource extends SQLiteOpenHelper{
 
         try{
 
+            Log.e("AulaoDB", "DB---> Tabela Criada  notas_aulao");
+
             db.execSQL(MediaEscolarDataModel.criarTabela());
 
         }catch (Exception e){
 
-            Log.e("Media", "DB---> ERRO: "+e.getMessage());
+            Log.e("AulaoDB", "DB---> ERRO: "+e.getMessage());
 
         }
 
@@ -58,8 +60,10 @@ public class DataSource extends SQLiteOpenHelper{
 
         boolean sucesso = true;
         try {
+
             sucesso = db.insert(tabela, null,
                     dados) > 0;
+
         }catch (Exception e){
 
             sucesso = false;

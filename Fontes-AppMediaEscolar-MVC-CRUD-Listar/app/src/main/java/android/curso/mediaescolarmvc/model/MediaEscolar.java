@@ -17,7 +17,6 @@ public class MediaEscolar {
     private double mediaFinal;
 
     public MediaEscolar() {
-
     }
 
     public int getId() {

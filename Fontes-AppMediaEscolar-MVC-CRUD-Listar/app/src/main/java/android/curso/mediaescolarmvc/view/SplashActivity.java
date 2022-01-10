@@ -15,10 +15,37 @@ public class SplashActivity extends AppCompatActivity {
 
     private static final int SPLASH_TIME_OUT = 5000;
 
+    MediaEscolarController mediaEscolarController;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
+
+         mediaEscolarController =
+                new MediaEscolarController(getBaseContext());
+
+         // CRUD - Create Retrieve Update Delete
+         // Create  Insert
+         // Retrieve Select
+
+        MediaEscolar mediaEscolar;
+
+        for (int i = 0; i < 2000 ; i++) {
+
+            mediaEscolar = new MediaEscolar();
+
+            mediaEscolar.setMateria("Materia "+i);
+            mediaEscolar.setBimestre("Bimestre "+i);
+            mediaEscolar.setSituacao("Situação "+i);
+            mediaEscolar.setNotaMateria(9.99);
+            mediaEscolar.setNotaProva(9.80);
+
+            mediaEscolarController.salvar(mediaEscolar);
+
+            Log.i("dbSalvar",mediaEscolar.getMateria());
+
+        }
 
         apresentarTelaSplash();
 
@@ -30,14 +57,13 @@ public class SplashActivity extends AppCompatActivity {
             @Override
             public void run() {
 
-                MediaEscolarController mediaEscolarController =
-                        new MediaEscolarController(getBaseContext());
+
 
               List<MediaEscolar> objetos = mediaEscolarController.listar();
 
                 for (MediaEscolar obj: objetos) {
 
-                    Log.i("CRUD LISTAR", "ID: "+obj.getId()+" - Matéria: "+obj.getMateria()+" - Situação: "+obj.getSituacao());
+                    Log.i("dbListar", "ID: "+obj.getId()+" - Matéria: "+obj.getMateria()+" - Situação: "+obj.getSituacao());
 
                 }
 

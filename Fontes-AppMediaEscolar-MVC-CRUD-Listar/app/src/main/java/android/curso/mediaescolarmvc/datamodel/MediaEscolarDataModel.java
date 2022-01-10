@@ -10,7 +10,7 @@ public class MediaEscolarDataModel {
     // MOR - Modelo objeto relacional
     // TUPLA ou Registros
 
-    private final static String TABELA = "media_escolar";
+    private final static String TABELA = "notas_aulao";
 
     private final static String id = "id";
     private final static String materia = "materia";
