@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Desenvolvimento-Android-do-absoluto-zero-para-iniciantes-Fontes-AulaAppMediaEscola-MVC-TelaSplash.iml" filepath="$PROJECT_DIR$/.idea/modules/Desenvolvimento-Android-do-absoluto-zero-para-iniciantes-Fontes-AulaAppMediaEscola-MVC-TelaSplash.iml" group="Fontes-AulaAppMediaEscola-MVC-TelaSplash" />
+      <module fileurl="file://$PROJECT_DIR$/Fontes-AulaAppMediaEscola-MVC-TelaSplash.iml" filepath="$PROJECT_DIR$/Fontes-AulaAppMediaEscola-MVC-TelaSplash.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Fontes-AulaAppMediaEscola-MVC-TelaSplash-app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Fontes-AulaAppMediaEscola-MVC-TelaSplash-app.iml" group="Fontes-AulaAppMediaEscola-MVC-TelaSplash/app" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+    </modules>
+  </component>
+</project>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/App_Send_SMS.iml" filepath="$PROJECT_DIR$/.idea/modules/App_Send_SMS.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/App_Send_SMS.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/App_Send_SMS.app.iml" />
+    </modules>
+  </component>
+</project>

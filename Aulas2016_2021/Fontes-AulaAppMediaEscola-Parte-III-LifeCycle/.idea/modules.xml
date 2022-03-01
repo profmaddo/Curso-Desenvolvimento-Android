@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Desenvolvimento-Android-do-absoluto-zero-para-iniciantes-Fontes-AulaAppMediaEscola-Parte-III-LifeCycle.iml" filepath="$PROJECT_DIR$/.idea/modules/Desenvolvimento-Android-do-absoluto-zero-para-iniciantes-Fontes-AulaAppMediaEscola-Parte-III-LifeCycle.iml" group="Fontes-AulaAppMediaEscola-Parte-III-LifeCycle" />
+      <module fileurl="file://$PROJECT_DIR$/Fontes-AulaAppMediaEscola-Parte-III-LifeCycle.iml" filepath="$PROJECT_DIR$/Fontes-AulaAppMediaEscola-Parte-III-LifeCycle.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Fontes-AulaAppMediaEscola-Parte-III-LifeCycle-app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Fontes-AulaAppMediaEscola-Parte-III-LifeCycle-app.iml" group="Fontes-AulaAppMediaEscola-Parte-III-LifeCycle/app" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+    </modules>
+  </component>
+</project>

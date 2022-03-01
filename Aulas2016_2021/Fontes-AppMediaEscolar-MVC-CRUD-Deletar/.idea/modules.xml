@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Desenvolvimento-Android-do-absoluto-zero-para-iniciantes-Fontes-AppMediaEscolar-MVC-CRUD-Deletar.iml" filepath="$PROJECT_DIR$/.idea/modules/Desenvolvimento-Android-do-absoluto-zero-para-iniciantes-Fontes-AppMediaEscolar-MVC-CRUD-Deletar.iml" group="Fontes-AppMediaEscolar-MVC-CRUD-Deletar" />
+      <module fileurl="file://$PROJECT_DIR$/Fontes-AppMediaEscolar-Aula-060-MVC-CRUD-Deletar.iml" filepath="$PROJECT_DIR$/Fontes-AppMediaEscolar-Aula-060-MVC-CRUD-Deletar.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Fontes-AppMediaEscolar-MVC-CRUD-Deletar.iml" filepath="$PROJECT_DIR$/Fontes-AppMediaEscolar-MVC-CRUD-Deletar.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Fontes-AppMediaEscolar-MVC-CRUD-Deletar-app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Fontes-AppMediaEscolar-MVC-CRUD-Deletar-app.iml" group="Fontes-AppMediaEscolar-MVC-CRUD-Deletar/app" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+    </modules>
+  </component>
+</project>

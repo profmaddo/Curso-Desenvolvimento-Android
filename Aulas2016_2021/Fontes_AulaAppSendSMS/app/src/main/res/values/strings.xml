@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">AulaAppSendSMS</string>
+    <string name="txtEnviarSMS">ENVIAR SMS</string>
+</resources>

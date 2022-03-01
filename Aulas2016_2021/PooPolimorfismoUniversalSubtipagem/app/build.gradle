@@ -1,0 +1,35 @@
+plugins {
+    id 'com.android.application'
+    id "org.sonarqube" version "3.1"
+}
+
+android {
+    compileSdkVersion 30
+    defaultConfig {
+        applicationId "foo.dazzi.poo.poopolimorfismouniversalsubtipagem"
+        minSdkVersion 14
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+sonarqube {
+    properties {
+        property "sonar.projectKey", "profmaddo_Desenvolvimento-Android-do-absoluto-zero-para-iniciantes"
+        property "sonar.organization", "profmaddo"
+        property "sonar.host.url", "https://sonarcloud.io"
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+}
