@@ -7,11 +7,5 @@ Este repositório contém os fontes que fazem parte do conteúdo dos cursos 100%
 Visite o site para conhecer a grade completa do curso e assistir aulas
 demonstrativas.
 
-# Coding Line by Line
-
-
-Plataforma com cursos para formar desenvolvedores web e mobile completos, inclusive desenvolvedores de games.
-
-https://codinglinebyline.com/coding-linee-by-line-turma-01/
-
-
+Os projetos criados nas aulas do treinamento, podem ser baixados por aqui e sempre estarão mais atualizados que as versões
+das aulas na plataforma do curso.
