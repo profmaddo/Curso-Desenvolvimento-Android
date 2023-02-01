@@ -14,4 +14,4 @@ das aulas na plataforma do curso.
 https://www.tssti.com.br
 =============================
 
-Contatos para consultoria em Desenvolvimento Web, Mobile ou Ci
+Contatos para consultoria em Desenvolvimento Web, Mobile ou Ciência de Dados, me contacte visitando o site TSSTI.
