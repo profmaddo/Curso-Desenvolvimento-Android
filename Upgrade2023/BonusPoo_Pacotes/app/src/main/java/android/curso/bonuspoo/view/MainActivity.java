@@ -43,45 +43,39 @@ public class MainActivity extends AppCompatActivity {
 
         imgCarro = findViewById(R.id.imgCarro);
 
-        chkFarol.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        chkFarol.setOnClickListener(v -> {
 
-                if(chkFarol.isChecked()){
-                    imgCarro.setImageResource(R.drawable.farois);
-                    Toast.makeText(getApplicationContext(),"Farol Ligado",Toast.LENGTH_LONG).show();
-                }else{
-                    imgCarro.setImageResource(R.drawable.carro);
-                    Toast.makeText(getApplicationContext(),"Farol desligado",Toast.LENGTH_LONG).show();
-                }
+            if(chkFarol.isChecked()){
+                imgCarro.setImageResource(R.drawable.farois);
+                Toast.makeText(getApplicationContext(),"Farol Ligado",Toast.LENGTH_LONG).show();
+            }else{
+                imgCarro.setImageResource(R.drawable.carro);
+                Toast.makeText(getApplicationContext(),"Farol desligado",Toast.LENGTH_LONG).show();
             }
         });
 
-        chkPartida.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        chkPartida.setOnClickListener(v -> {
 
-                objCarro = new Carro();
+            objCarro = new Carro();
 
-                objCarro.setFabricante(editFabricante.getText().toString());
-                objCarro.setModelo(editModelo.getText().toString());
-                objCarro.setAno(editAno.getText().toString());
-                objCarro.setCor(editCor.getText().toString());
+            objCarro.setFabricante(editFabricante.getText().toString());
+            objCarro.setModelo(editModelo.getText().toString());
+            objCarro.setAno(editAno.getText().toString());
+            objCarro.setCor(editCor.getText().toString());
 
-                fabricarCarro();
+            fabricarCarro();
 
-                if(chkPartida.isChecked()){
+            if(chkPartida.isChecked()){
 
-                    imgCarro.setImageResource(R.drawable.motor);
-                    Toast.makeText(getApplicationContext(),"Motor Ligado",Toast.LENGTH_LONG).show();
+                imgCarro.setImageResource(R.drawable.motor);
+                Toast.makeText(getApplicationContext(),"Motor Ligado",Toast.LENGTH_LONG).show();
 
 
-                }else{
-                    imgCarro.setImageResource(R.drawable.carro);
-                    Toast.makeText(getApplicationContext(),"Motor desligado",Toast.LENGTH_LONG).show();
-                }
-
+            }else{
+                imgCarro.setImageResource(R.drawable.carro);
+                Toast.makeText(getApplicationContext(),"Motor desligado",Toast.LENGTH_LONG).show();
             }
+
         });
 
     }
