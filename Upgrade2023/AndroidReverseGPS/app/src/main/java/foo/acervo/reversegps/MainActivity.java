@@ -21,6 +21,8 @@ import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
 
+    // TODO: Implementar permissões
+
     GPSTracker gps;
     TextView txtLatitude;
     TextView txtLongitude;
@@ -42,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
         txtEndereco = findViewById(R.id.txtEndereco);
         btnMapa = findViewById(R.id.btnMapa);
 
-        Log.i("GpsReverso", AppUtil.getNetworkClass(this));
+     //   Log.i("GpsReverso", AppUtil.getNetworkClass(this));
 
         txtRede = (TextView) findViewById(R.id.txtRede);
         txtRede.setText("Origem - Rede : " + AppUtil.getNetworkClass(this));
