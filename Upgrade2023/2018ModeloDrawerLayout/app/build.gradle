@@ -3,7 +3,7 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 33
     defaultConfig {
-        applicationId "foo.dazzi.modelodrawerlayout"
+        applicationId "foo.marcomaddo.templatemenudrawer"
         minSdkVersion 21
         targetSdkVersion 33
         versionCode 1
