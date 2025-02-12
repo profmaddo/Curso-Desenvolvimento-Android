@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
@@ -47,12 +48,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if(chkFarol.isChecked()){
+                if (chkFarol.isChecked()) {
                     imgCarro.setImageResource(R.drawable.farois);
-                    Toast.makeText(getApplicationContext(),"Farol Ligado",Toast.LENGTH_LONG).show();
-                }else{
+                    Toast.makeText(getApplicationContext(), "Farol Ligado", Toast.LENGTH_LONG).show();
+                } else {
                     imgCarro.setImageResource(R.drawable.carro);
-                    Toast.makeText(getApplicationContext(),"Farol desligado",Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "Farol desligado", Toast.LENGTH_LONG).show();
                 }
             }
         });
@@ -60,7 +61,6 @@ public class MainActivity extends AppCompatActivity {
         chkPartida.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
 
                 objCarro = new Carro();
 
@@ -71,15 +71,15 @@ public class MainActivity extends AppCompatActivity {
 
                 fabricarCarro();
 
-                if(chkPartida.isChecked()){
+                if (chkPartida.isChecked()) {
 
                     imgCarro.setImageResource(R.drawable.motor);
-                    Toast.makeText(getApplicationContext(),"Motor Ligado",Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "Motor Ligado", Toast.LENGTH_LONG).show();
 
 
-                }else{
+                } else {
                     imgCarro.setImageResource(R.drawable.carro);
-                    Toast.makeText(getApplicationContext(),"Motor desligado", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "Motor desligado", Toast.LENGTH_LONG).show();
                 }
 
             }
@@ -88,28 +88,24 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initFormulario() {
+
         editFabricante = findViewById(R.id.editFabricante);
         editModelo = findViewById(R.id.editModelo);
         editAno = findViewById(R.id.editAno);
         editCor = findViewById(R.id.editCor);
-
         chkPartida = findViewById(R.id.chkPartida);
         chkFarol = findViewById(R.id.chkFarol);
-
         imgCarro = findViewById(R.id.imgCarro);
     }
 
 
-    public void fabricarCarro(){
+    public void fabricarCarro() {
 
         android.app.AlertDialog.Builder builder = new android.app.AlertDialog.Builder(MainActivity.this);
-        builder.setMessage("Fabricante: "+objCarro.getFabricante()+"\nModelo: "+objCarro.getModelo()+"\nAno: "+objCarro.getAno()+"\nCor: "+objCarro.getCor())
+        builder.setMessage("Fabricante: " + objCarro.getFabricante() + "\nModelo: " + objCarro.getModelo() + "\nAno: " + objCarro.getAno() + "\nCor: " + objCarro.getCor())
                 .setNegativeButton("Objeto Carro Criado", null)
                 .create()
                 .show();
-
-
-        //.setMessage("Fabricante: "+objCarro.getFabricante()+"\nModelo: "+objCarro.getModelo()+"\nAno: "+objCarro.getAno()+"\nCor: "+objCarro.getCor())
 
     }
 }
