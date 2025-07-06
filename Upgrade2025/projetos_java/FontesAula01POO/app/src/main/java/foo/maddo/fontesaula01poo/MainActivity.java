@@ -15,7 +15,6 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
 
-    TextView txtTitulo;
     EditText primeiroNome, segundoNome, telefone, email;
     Button btnLimpar, btnSalvar;
 
@@ -56,10 +55,10 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
 
-                        Toast.makeText(getApplicationContext(),"Primeiro nome: "+primeiroNome.getText(),Toast.LENGTH_LONG).show();
-                        Toast.makeText(getApplicationContext(),"Segundo nome: "+segundoNome.getText(),Toast.LENGTH_LONG).show();
-                        Toast.makeText(getApplicationContext(),"Telefone: "+telefone.getText(),Toast.LENGTH_LONG).show();
-                        Toast.makeText(getApplicationContext(),"Email: "+email.getText(),Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(), "Primeiro nome: " + primeiroNome.getText(), Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(), "Segundo nome: " + segundoNome.getText(), Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(), "Telefone: " + telefone.getText(), Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(), "Email: " + email.getText(), Toast.LENGTH_LONG).show();
 
                         contato = new Contato();
 
@@ -72,7 +71,6 @@ public class MainActivity extends AppCompatActivity {
 
                     }
                 });
-
 
     }
 }
