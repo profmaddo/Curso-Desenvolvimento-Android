@@ -4,12 +4,12 @@ plugins {
 
 android {
     namespace = "foo.maddo.fontesaula01poo"
-    compileSdk = 35
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "foo.maddo.fontesaula01poo"
         minSdk = 21
-        targetSdk = 35
+        targetSdk = 36
         versionCode = 1
         versionName = "1.0"
 

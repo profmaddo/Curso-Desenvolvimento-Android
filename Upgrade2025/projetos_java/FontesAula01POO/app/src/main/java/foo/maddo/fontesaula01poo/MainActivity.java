@@ -15,8 +15,6 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
 
-
-
     TextView txtTitulo;
     EditText primeiroNome, segundoNome, telefone, email;
     Button btnLimpar, btnSalvar;
