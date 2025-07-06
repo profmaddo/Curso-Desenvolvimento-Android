@@ -1,6 +1,6 @@
 # POOClasseCarro - Demonstração de Polimorfismo e Herança
 
-## 📚 Sobre o Projeto
+## 📚 Sobre o Projeto.
 
 Este projeto foi desenvolvido pelo **Professor Marco Maddo** como parte do curso de Desenvolvimento Android, demonstrando conceitos fundamentais de **Programação Orientada a Objetos (POO)**, especificamente **Polimorfismo** e **Herança** através de um exemplo prático de diferentes tipos de transporte.
 
