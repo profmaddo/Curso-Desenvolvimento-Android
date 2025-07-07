@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
 
     Pessoa pessoa;
     Button btnFabricarObjetoPessoa;
+    Button btnCriarPessoa;
     TextView txtPessoa;
     int contagem = 0;
     int eventos = 0;
@@ -34,14 +35,18 @@ public class MainActivity extends AppCompatActivity {
 
         txtPessoa = findViewById(R.id.txtPessoa);
         btnFabricarObjetoPessoa = findViewById(R.id.btnFabricarObjetoPessoa);
+        btnCriarPessoa = findViewById(R.id.btnCriarPessoa);
 
         btnFabricarObjetoPessoa.setOnClickListener(v -> { fabricarPessoa(); });
+
+        btnCriarPessoa.setOnClickListener(v -> { metodoParaCriarPessoa(); });
+
 
 
         // Exemplo de uso da classe Pessoa
 
         fabricarPessoa();
-        metodoParaCriarPessoa();
+
         metodoParaAlterarPessoa();
         metodoParaDeletarPessoa();
         metodoParaListarPessoa();
@@ -72,8 +77,10 @@ public class MainActivity extends AppCompatActivity {
 
     private void metodoParaCriarPessoa() {
         eventos++;
+        fabricarPessoa();
         txtPessoa.setText(pessoa.getNome() + " " + pessoa.getIdade()+" - "+contagem+"ª Pessoas");
         Log.e("eventos","Total de eventos: "+eventos+" - Criar");
+        Log.w("eventos","Total de eventos: "+eventos+" - Criar Atenção");
 
     }
 
