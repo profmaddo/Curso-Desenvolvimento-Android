@@ -35,12 +35,12 @@ public class MainActivity extends AppCompatActivity {
         txtPessoa = findViewById(R.id.txtPessoa);
         btnFabricarObjetoPessoa = findViewById(R.id.btnFabricarObjetoPessoa);
 
-        btnFabricarObjetoPessoa.setOnClickListener(v -> { fabricaPessoa(); });
+        btnFabricarObjetoPessoa.setOnClickListener(v -> { fabricarPessoa(); });
 
 
         // Exemplo de uso da classe Pessoa
 
-        fabricaPessoa();
+        fabricarPessoa();
         metodoParaCriarPessoa();
         metodoParaAlterarPessoa();
         metodoParaDeletarPessoa();
@@ -78,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    private void fabricaPessoa() {
+    private void fabricarPessoa() {
 
         int idade = getIdade();
         contagem++;
