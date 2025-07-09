@@ -304,6 +304,259 @@ public class CRUDTest {
 
 ---
 
+## 🧪 **Testes Unitários com JUnit - Aplicação Avançada da POO**
+
+### **Estrutura de Testes JUnit:**
+
+```
+📦 src/test/java/foo/maddo/appaula03bancodedadossqlite/
+├── 🧪 EnderecoTest.java           # Testes unitários da classe Endereco
+├── 🧪 FornecedorTest.java         # Testes unitários da classe Fornecedor  
+├── 🧪 ProdutoTest.java            # Testes unitários da classe Produto
+├── 🔗 ModelIntegrationTest.java   # Testes de integração entre classes
+├── 📦 ModelTestSuite.java         # Suíte que executa todos os testes
+└── 📄 README_TESTES.md            # Documentação dos testes
+```
+
+### **1. 🧪 Testes Unitários - Encapsulamento e Validação**
+
+#### **EnderecoTest.java - Exemplo de Teste Unitário:**
+
+```java
+public class EnderecoTest {
+    
+    @Test
+    public void testConstrutorVazio() {
+        // 🔒 Testa o encapsulamento - construtor padrão
+        Endereco endereco = new Endereco();
+        assertNotNull("Endereço não deve ser null", endereco);
+        assertEquals("ID deve ser 0 por padrão", 0, endereco.getId());
+        assertNull("Endereço deve ser null por padrão", endereco.getEndereco());
+    }
+    
+    @Test
+    public void testConstrutorComParametros() {
+        // 🔒 Testa o encapsulamento - construtor com parâmetros
+        String enderecoStr = "Rua das Flores, 123";
+        String cidade = "São Paulo";
+        String estado = "SP";
+        
+        Endereco endereco = new Endereco(enderecoStr, cidade, estado);
+        
+        assertEquals("Endereço deve ser igual ao passado", enderecoStr, endereco.getEndereco());
+        assertEquals("Cidade deve ser igual à passada", cidade, endereco.getCidade());
+        assertEquals("Estado deve ser igual ao passado", estado, endereco.getEstado());
+    }
+    
+    @Test
+    public void testSetId() {
+        // 🔒 Testa o encapsulamento - setter
+        Endereco endereco = new Endereco();
+        long id = 5L;
+        
+        endereco.setId(id);
+        
+        assertEquals("ID deve ser atualizado", id, endereco.getId());
+    }
+    
+    @Test
+    public void testToString() {
+        // 🎭 Testa o polimorfismo - método toString()
+        long id = 1L;
+        String enderecoStr = "Rua das Flores, 123";
+        String cidade = "São Paulo";
+        String estado = "SP";
+        
+        Endereco endereco = new Endereco(id, enderecoStr, cidade, estado);
+        String resultado = endereco.toString();
+        
+        assertTrue("toString deve conter o ID", resultado.contains("id=" + id));
+        assertTrue("toString deve conter o endereço", resultado.contains("endereco='" + enderecoStr + "'"));
+    }
+}
+```
+
+#### **Vantagens dos Testes Unitários:**
+- 🛡️ **Validação de Encapsulamento** - Verifica se getters/setters funcionam
+- 🎭 **Teste de Polimorfismo** - Valida métodos como `toString()`, `equals()`, `hashCode()`
+- 🔧 **Detecção de Bugs** - Identifica problemas rapidamente
+- 📚 **Documentação Viva** - Testes explicam como usar as classes
+- 🧪 **Refatoração Segura** - Garante que mudanças não quebrem funcionalidade
+
+### **2. 🔗 Testes de Integração - Relacionamentos POO**
+
+#### **ModelIntegrationTest.java - Exemplo de Teste de Integração:**
+
+```java
+public class ModelIntegrationTest {
+    
+    @Test
+    public void testRelacionamentoEnderecoFornecedor() {
+        // 🧬 Testa relacionamento entre classes (herança conceitual)
+        Endereco endereco = new Endereco(1L, "Rua das Flores, 123", "São Paulo", "SP");
+        Fornecedor fornecedor = new Fornecedor(1L, "Tech Solutions Ltda", "(11) 99999-1111", endereco.getId());
+        
+        // Verifica se o relacionamento está correto
+        assertEquals("Fornecedor deve referenciar o ID do endereço", 
+                    endereco.getId(), fornecedor.getEnderecoId());
+    }
+    
+    @Test
+    public void testRelacionamentoCompleto() {
+        // 🎨 Testa abstração - relacionamentos complexos
+        Endereco endereco = new Endereco(1L, "Av. Paulista, 1000", "São Paulo", "SP");
+        Fornecedor fornecedor = new Fornecedor(1L, "Smart Systems", "(11) 99999-3333", endereco.getId());
+        
+        List<Produto> produtos = new ArrayList<>();
+        produtos.add(new Produto(1L, "Teclado RGB", "unidade", 25.0, 299.90, true, fornecedor.getId()));
+        produtos.add(new Produto(2L, "Monitor 24\"", "unidade", 15.0, 899.90, true, fornecedor.getId()));
+        
+        fornecedor.setProdutos(produtos);
+        
+        // Verifica relacionamentos complexos
+        assertEquals("Fornecedor deve referenciar o endereço", endereco.getId(), fornecedor.getEnderecoId());
+        assertEquals("Fornecedor deve ter 2 produtos", 2, fornecedor.getProdutos().size());
+        
+        for (Produto produto : produtos) {
+            assertEquals("Cada produto deve referenciar o fornecedor", 
+                        fornecedor.getId(), produto.getFornecedorId());
+        }
+    }
+    
+    @Test
+    public void testCicloDeVidaCompleto() {
+        // 🎯 Testa responsabilidade única - cada classe tem seu papel
+        // 1. Criar endereço
+        Endereco endereco = new Endereco("Rua Augusta, 500", "São Paulo", "SP");
+        
+        // 2. Criar fornecedor
+        Fornecedor fornecedor = new Fornecedor("Future Tech", "(11) 99999-4444", endereco.getId());
+        
+        // 3. Criar produtos
+        List<Produto> produtos = new ArrayList<>();
+        produtos.add(new Produto("Headset Gamer", "unidade", 20.0, 399.90, true, fornecedor.getId()));
+        
+        // 4. Associar produtos ao fornecedor
+        fornecedor.setProdutos(produtos);
+        
+        // Verifica se cada classe cumpre sua responsabilidade
+        assertNotNull("Endereço deve ser criado", endereco);
+        assertNotNull("Fornecedor deve ser criado", fornecedor);
+        assertEquals("Fornecedor deve ter 1 produto", 1, fornecedor.getProdutos().size());
+    }
+}
+```
+
+#### **Vantagens dos Testes de Integração:**
+- 🔗 **Validação de Relacionamentos** - Verifica se classes trabalham juntas
+- 🎯 **Teste de Responsabilidades** - Confirma que cada classe tem seu papel
+- 🧬 **Validação de Herança Conceitual** - Testa relacionamentos entre entidades
+- 🎨 **Teste de Abstração** - Verifica se abstrações funcionam corretamente
+
+### **3. 📦 Suíte de Testes - Organização POO**
+
+#### **ModelTestSuite.java - Organização de Testes:**
+
+```java
+@RunWith(Suite.class)
+@SuiteClasses({
+    EnderecoTest.class,           // 🧪 Testes unitários
+    FornecedorTest.class,         // 🧪 Testes unitários
+    ProdutoTest.class,            // 🧪 Testes unitários
+    ModelIntegrationTest.class    // 🔗 Testes de integração
+})
+public class ModelTestSuite {
+    // 🎨 Abstração - esconde complexidade de execução de múltiplos testes
+    // 🎭 Polimorfismo - executa diferentes tipos de teste
+    // 🔒 Encapsulamento - organiza testes em uma estrutura única
+}
+```
+
+#### **Vantagens da Suíte de Testes:**
+- 🎨 **Abstração** - Executa todos os testes com uma chamada
+- 🎭 **Polimorfismo** - Diferentes tipos de teste na mesma suíte
+- 🔒 **Encapsulamento** - Organiza testes em uma estrutura única
+- 📊 **Visão Geral** - Mostra cobertura completa do projeto
+
+### **4. 🎯 Padrões de Teste POO Aplicados**
+
+#### **Padrão AAA (Arrange, Act, Assert):**
+
+```java
+@Test
+public void testSetEndereco() {
+    // 🎯 Arrange (Preparar) - Encapsulamento de dados de teste
+    Endereco endereco = new Endereco();
+    String enderecoStr = "Rua Nova, 456";
+    
+    // 🎯 Act (Agir) - Testar o comportamento
+    endereco.setEndereco(enderecoStr);
+    
+    // 🎯 Assert (Verificar) - Validar o resultado
+    assertEquals("Endereço deve ser atualizado", enderecoStr, endereco.getEndereco());
+}
+```
+
+#### **Padrão Test Data Builder:**
+
+```java
+// 🎨 Abstração - esconde complexidade de criação de dados de teste
+private Endereco criarEnderecoTeste() {
+    return new Endereco(1L, "Rua Teste, 123", "Cidade Teste", "TS");
+}
+
+private Fornecedor criarFornecedorTeste() {
+    return new Fornecedor(1L, "Fornecedor Teste", "(11) 99999-9999", 1L);
+}
+```
+
+### **5. 🧪 Benefícios dos Testes JUnit para POO**
+
+#### **Para o Desenvolvedor:**
+- 🧠 **Compreensão POO** - Testes mostram como usar as classes
+- 🔧 **Refatoração Segura** - Garante que mudanças não quebrem POO
+- 🎯 **Design Melhor** - Testes revelam problemas de design
+- 📚 **Documentação** - Testes explicam o comportamento das classes
+
+#### **Para o Projeto:**
+- 🛡️ **Qualidade** - Garante que POO está implementado corretamente
+- 🔄 **Manutenibilidade** - Facilita mudanças futuras
+- 🧪 **Confiabilidade** - Reduz bugs relacionados a POO
+- 📈 **Escalabilidade** - Facilita adição de novas funcionalidades
+
+### **6. 🎓 Exercícios Práticos de Teste POO**
+
+#### **Exercício 1: Criar Teste para Validação de Encapsulamento**
+```java
+@Test
+public void testValidacaoEncapsulamento() {
+    // Teste se dados privados não podem ser acessados diretamente
+    // Teste se getters/setters funcionam corretamente
+    // Teste se validações são aplicadas
+}
+```
+
+#### **Exercício 2: Criar Teste para Polimorfismo**
+```java
+@Test
+public void testPolimorfismoToString() {
+    // Teste se diferentes classes têm toString() diferentes
+    // Teste se toString() retorna informações relevantes
+}
+```
+
+#### **Exercício 3: Criar Teste para Relacionamentos**
+```java
+@Test
+public void testRelacionamentosComplexos() {
+    // Teste relacionamentos muitos-para-muitos
+    // Teste cascata de operações
+    // Teste integridade referencial
+}
+```
+
+---
+
 ## 🎓 **Boas Práticas POO Aplicadas**
 
 ### 1. **Responsabilidade Única (SRP)**
